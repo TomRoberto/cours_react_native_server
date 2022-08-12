@@ -16,7 +16,7 @@ const convertToBase64 = (file) => {
   return `data:${file.mimetype};base64,${file.data.toString("base64")}`;
 };
 
-app.put("/upload", fileUpload(), async (req, res) => {
+app.post("/upload", fileUpload(), async (req, res) => {
   try {
     console.log(req.files);
     const pictureToUpload = req.files.picture;
